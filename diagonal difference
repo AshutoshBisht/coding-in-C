@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+  int x,sum1=0,sum2=0,diff,k=1;
+  scanf("%d",&x);
+  int y;
+  y=x;
+  int a[x][y];
+  for(int i=0;i<x;i++)
+  {
+    for(int j=0;j<x;j++)
+    {
+      scanf("%d",&a[i][j]);
+      if(a[i][j]>=100&&a[i][j]<=-100)
+      return 0;
+    }
+  }
+    for(int i=0;i<x;i++)
+    {
+      for(int j=0;j<x;j++)
+      {
+        if(i==j)
+        sum1=sum1+a[i][j];
+      }
+    }
+    for(int i=0;i<x;i++)
+    {
+        for( int j=0;j<x;j++)
+        {
+          if(i+j==x-1)
+          sum2=sum2+(a[i][j]);
+        }
+      }
+    diff=sum2-sum1;
+    diff= abs(diff);
+    printf("%d",diff );
+    return 0;
+
+  }
